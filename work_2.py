@@ -28,11 +28,11 @@
 # numbers = [1, 3, 4, 56, 78, 45, 345, 12, 0]
 # new_numbers = []
 #
-# for _ in numbers:
-#     if _ % 2 == 0:
-#         new_numbers.append(_ / 4)
+# for number in numbers:
+#     if number % 2 == 0:
+#         new_numbers.append(round(number / 4))
 #     else:
-#         new_numbers.append(_ * 2)
+#         new_numbers.append(round(number * 2))
 #
 # print(new_numbers)
 
