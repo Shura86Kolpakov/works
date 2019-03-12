@@ -4,25 +4,33 @@
 # И второй скрипт, удаляющий эти папки.
 import os
 import sys
+import shutil
 
-# for i in range(1, 10):
-#     os.mkdir(f'dir_{i}')
-# print(os.listdir())
-# for i in range(1, 10):
-#     os.rmdir(f'dir_{i}')
-# print(os.listdir())
+for i in range(1, 10):
+    os.mkdir(f'dir_{i}')
+print(os.listdir())
+for i in range(1, 10):
+    os.rmdir(f'dir_{i}')
+print(os.listdir())
 
 
 # Задача-2:
 # Напишите скрипт, отображающий папки текущей директории.
 
-# print([i for i in os.listdir() if os.path.isdir(i)])
+print([i for i in os.listdir() if os.path.isdir(i)])
 
 # Задача-3:
 # Напишите скрипт, создающий копию файла, из которого запущен данный скрипт.
 
-# print(os.path.exists())
-# print(os.path.dirname('.'))
+if __name__ == '__main__':
+    file_name = os.path.split(__file__)[-1]
+    copy_file = file_name + '.copy'
+    shutil.copy(file_name, copy_file)
+    if os.path.exists(copy_file):
+        print('файл', copy_file, 'был успешно создан')
+    else:
+        print('возникли проблемы')
+
 
 # Задача-1:
 # Напишите небольшую консольную утилиту,
@@ -39,24 +47,29 @@ import sys
 # Для решения данной задачи используйте алгоритмы из задания easy,
 # оформленные в виде соответствующих функций,
 # и импортированные в данный файл из easy.py
-
+#
 if 'menu'in sys.argv:
     print("1. Перейти в папку\n2. Просмотреть содержимое текущей папки\n3. Удалить папку\n4. Создать папку")
 if '1' in sys.argv:
     dir_name = input('Введите имя папки:')
     os.chdir(dir_name)
-    print('Успешно першел' if dir_name = os.getcwd('.') else 'Невозможно перейти')
+    try:
+        print('Успешно першел')
+    except Exception as e:
+        print('Невозможно перейти')
 if '2' in sys.argv:
     print(os.listdir())
 if '3' in sys.argv:
     name_dir = input('Введите имя удаляемой папки:')
     os.rmdir(name_dir)
-    print('Папка успешно удалена')
-else:
-    print('Невозможно удалить')
+    try:
+        print('Папка успешно удалена')
+    except Exception as e:
+        print('Невозможно удалить')
 if '4' in sys.argv:
     name_dir = input('Введите имя создаваемой папки:')
     os.mkdir(name_dir)
-    print('Папка успешно создана')
-else:
-    print('Невозможно создать')
+    try:
+        print('Папка успешно создана')
+    except Exception as e:
+        print('Невозможно создать')

@@ -22,22 +22,22 @@
 # print(lst_2)
 
 # normal_1
-import re
-pattern = '[А-ЯA-Z]'
-name = input('Введите имя: ')
-surname = input('Введите фамилию: ')
-name = (name.title() if re.match(pattern, name) is None else name)
-surname = (surname.title() if re.match(pattern, name) is None else surname)
-pattern = '[a-z_0-9]+@[a-z]+\.(com|org|ru)'
-
-while True:
-    email = input('Введите email: ')
-    pattern = '[a-z_0-9]+@[a-z]+\.(com|org|ru)'
-    if re.match(pattern, email) is None:
-        print('Неправильный email')
-    else:
-        break
-print(f'{name} {surname} {email}')
+# import re
+# pattern = '[А-ЯA-Z]'
+# name = input('Введите имя: ')
+# surname = input('Введите фамилию: ')
+# name = (name.title() if re.match(pattern, name) is None else name)
+# surname = (surname.title() if re.match(pattern, name) is None else surname)
+# pattern = '[a-z_0-9]+@[a-z]+\.(com|org|ru)'
+#
+# while True:
+#     email = input('Введите email: ')
+#     pattern = '[a-z_0-9]+@[a-z]+\.(com|org|ru)'
+#     if re.match(pattern, email) is None:
+#         print('Неправильный email')
+#     else:
+#         break
+# print(f'{name} {surname} {email}')
 
 # # normal_2
 # import re
